@@ -77,12 +77,12 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       <nav className="border-b border-border fixed w-full bg-background/90 backdrop-blur-md z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
+          <a href="https://clickrocketlab.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center">
               <Rocket className="h-5 w-5 text-primary-foreground" />
             </div>
             <span className="font-bold text-xl text-foreground">Click Rocket Lab</span>
-          </div>
+          </a>
         </div>
       </nav>
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">

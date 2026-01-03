@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Search, BarChart3, CheckCircle2, Zap, MapPin, Building2, Loader2 } from "lucide-react";
+import { Search, BarChart3, CheckCircle2, Zap, MapPin, Building2, Loader2, Rocket } from "lucide-react";
 
 interface PlaceResult {
   placeId: string;
@@ -74,77 +74,74 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
-      <nav className="border-b border-slate-100 dark:border-slate-800 fixed w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md z-50">
+    <div className="min-h-screen bg-background">
+      <nav className="border-b border-border fixed w-full bg-background/90 backdrop-blur-md z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center">
-              <span className="text-white font-bold text-lg">G</span>
+            <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center">
+              <Rocket className="h-5 w-5 text-primary-foreground" />
             </div>
-            <span className="font-bold text-xl text-slate-900 dark:text-white">GBP Optimizer</span>
+            <span className="font-bold text-xl text-foreground">Click Rocket Lab</span>
           </div>
         </div>
       </nav>
 
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="text-center space-y-6 mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-sm font-semibold border border-blue-100 dark:border-blue-800">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-            </span>
-            Free Business Profile Analysis
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
+            <Rocket className="h-4 w-4" />
+            Free Business Profile Audit
           </div>
           
-          <h1 className="font-bold text-4xl md:text-5xl leading-tight text-slate-900 dark:text-white">
-            Optimize Your Google Business Profile
+          <h1 className="font-bold text-4xl md:text-5xl leading-tight text-foreground">
+            Rankings That <span className="text-primary">Soar</span>
           </h1>
           
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Get a free score and AI-powered recommendations to improve your local search ranking and convert more customers.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Get a free score and AI-powered recommendations to boost your Google Business Profile and convert more local leads.
           </p>
         </div>
 
-        <Card className="shadow-xl border-slate-200 dark:border-slate-700">
+        <Card className="rocket-glow border-border bg-card">
           <CardContent className="p-6 md:p-8">
             <form onSubmit={handleSearch} className="space-y-4">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-700 dark:text-slate-300" htmlFor="businessName">
+                <label className="text-sm font-medium text-foreground" htmlFor="businessName">
                   Business Name
                 </label>
                 <div className="relative">
-                  <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                  <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
                     id="businessName"
                     data-testid="input-business-name"
                     placeholder="e.g., Joe's Pizza"
                     value={businessName}
                     onChange={(e) => setBusinessName(e.target.value)}
-                    className="pl-10"
+                    className="pl-10 bg-background border-input text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-700 dark:text-slate-300" htmlFor="city">
+                  <label className="text-sm font-medium text-foreground" htmlFor="city">
                     City
                   </label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="city"
                       data-testid="input-city"
                       placeholder="e.g., Austin"
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="pl-10"
+                      className="pl-10 bg-background border-input text-foreground placeholder:text-muted-foreground"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-700 dark:text-slate-300" htmlFor="state">
+                  <label className="text-sm font-medium text-foreground" htmlFor="state">
                     State
                   </label>
                   <select
@@ -152,11 +149,11 @@ export default function HomePage() {
                     data-testid="select-state"
                     value={state}
                     onChange={(e) => setState(e.target.value)}
-                    className="w-full h-9 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                    className="w-full h-9 rounded-md border border-input bg-background px-3 py-1 text-sm text-foreground shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                   >
-                    <option value="">Select state</option>
+                    <option value="" className="bg-card">Select state</option>
                     {US_STATES.map((s) => (
-                      <option key={s} value={s}>{s}</option>
+                      <option key={s} value={s} className="bg-card">{s}</option>
                     ))}
                   </select>
                 </div>
@@ -165,7 +162,7 @@ export default function HomePage() {
               <Button 
                 type="submit" 
                 size="lg"
-                className="w-full"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
                 disabled={searchMutation.isPending}
                 data-testid="button-search"
               >
@@ -176,8 +173,8 @@ export default function HomePage() {
                   </>
                 ) : (
                   <>
-                    <Search className="mr-2 h-4 w-4" />
-                    Search Business
+                    <Rocket className="mr-2 h-4 w-4" />
+                    Launch Audit
                   </>
                 )}
               </Button>
@@ -187,29 +184,29 @@ export default function HomePage() {
 
         {searchResults.length > 0 && (
           <div className="mt-8 space-y-4">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">Select Your Business</h2>
+            <h2 className="text-xl font-bold text-foreground">Select Your Business</h2>
             {searchResults.map((place) => (
               <Card 
                 key={place.placeId} 
-                className="cursor-pointer hover-elevate transition-all"
+                className="cursor-pointer hover-elevate border-border bg-card hover:border-primary/50 transition-all"
                 onClick={() => handleSelectBusiness(place.placeId)}
                 data-testid={`card-result-${place.placeId}`}
               >
                 <CardContent className="p-4 flex items-center justify-between gap-4">
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-slate-900 dark:text-white truncate">{place.name}</h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{place.address}</p>
+                    <h3 className="font-semibold text-foreground truncate">{place.name}</h3>
+                    <p className="text-sm text-muted-foreground truncate">{place.address}</p>
                     {place.rating && (
-                      <div className="flex items-center gap-1 mt-1 text-sm text-slate-600 dark:text-slate-300">
-                        <span className="text-amber-500">{"*".repeat(Math.round(place.rating))}</span>
+                      <div className="flex items-center gap-1 mt-1 text-sm text-muted-foreground">
+                        <span className="text-primary">{"*".repeat(Math.round(place.rating))}</span>
                         <span>{place.rating.toFixed(1)}</span>
                         {place.reviewsCount && (
-                          <span className="text-slate-400">({place.reviewsCount} reviews)</span>
+                          <span className="text-muted-foreground/70">({place.reviewsCount} reviews)</span>
                         )}
                       </div>
                     )}
                   </div>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
                     <Search className="h-4 w-4" />
                   </Button>
                 </CardContent>
@@ -220,36 +217,37 @@ export default function HomePage() {
       </section>
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card className="border-slate-100 dark:border-slate-800">
+        <h2 className="text-2xl font-bold text-center text-foreground mb-8">Results, Delivered Locally</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card className="border-border bg-card">
             <CardContent className="p-6">
-              <div className="h-12 w-12 bg-blue-50 dark:bg-blue-950 rounded-xl flex items-center justify-center mb-4">
-                <BarChart3 className="h-6 w-6 text-blue-600" />
+              <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                <BarChart3 className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-slate-900 dark:text-white">Optimization Score</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm">
+              <h3 className="font-bold text-lg mb-2 text-foreground">Higher Google Rankings</h3>
+              <p className="text-muted-foreground text-sm">
                 Get a 0-100 score for your profile health based on Google's ranking factors.
               </p>
             </CardContent>
           </Card>
-          <Card className="border-slate-100 dark:border-slate-800">
+          <Card className="border-border bg-card">
             <CardContent className="p-6">
-              <div className="h-12 w-12 bg-emerald-50 dark:bg-emerald-950 rounded-xl flex items-center justify-center mb-4">
-                <CheckCircle2 className="h-6 w-6 text-emerald-600" />
+              <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                <CheckCircle2 className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-slate-900 dark:text-white">Actionable Checklist</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm">
-                Get a prioritized list of improvements to boost your local search ranking.
+              <h3 className="font-bold text-lg mb-2 text-foreground">More Local Leads</h3>
+              <p className="text-muted-foreground text-sm">
+                Get a prioritized list of improvements to boost your local search and conversions.
               </p>
             </CardContent>
           </Card>
-          <Card className="border-slate-100 dark:border-slate-800">
+          <Card className="border-border bg-card">
             <CardContent className="p-6">
-              <div className="h-12 w-12 bg-amber-50 dark:bg-amber-950 rounded-xl flex items-center justify-center mb-4">
-                <Zap className="h-6 w-6 text-amber-500" />
+              <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                <Zap className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-slate-900 dark:text-white">AI Recommendations</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm">
+              <h3 className="font-bold text-lg mb-2 text-foreground">Increased Conversions</h3>
+              <p className="text-muted-foreground text-sm">
                 Leverage AI to generate personalized optimization strategies for your business.
               </p>
             </CardContent>
@@ -257,8 +255,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8 text-center text-slate-500 dark:text-slate-400 text-sm">
-        <p>GBP Optimizer - Improve your Google Business Profile</p>
+      <footer className="border-t border-border py-8 text-center text-muted-foreground text-sm">
+        <p>Click Rocket Lab - Clicks That Soar</p>
       </footer>
     </div>
   );

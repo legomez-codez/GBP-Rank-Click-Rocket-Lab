@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,35 +6,55 @@
 
 :root {
   --font-body: 'DM Sans', sans-serif;
-  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Poppins', sans-serif;
 
-  /* Fresh, trustworthy, premium palette */
-  /* Primary: Vibrant Royal Blue */
-  --primary: 221 83% 53%;
-  --primary-foreground: 210 40% 98%;
+  /* Click Rocket Lab inspired palette - Yellow/Gold with Dark */
+  /* Primary: Bright Yellow/Gold */
+  --primary: 51 100% 50%;
+  --primary-foreground: 220 10% 12%;
 
-  /* Secondary: Soft Periwinkle */
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 11%;
+  /* Secondary: Soft Gray */
+  --secondary: 228 6% 49%;
+  --secondary-foreground: 0 0% 100%;
 
-  /* Backgrounds: Clean, slight warmth */
-  --background: 210 20% 99%; /* Nearly white, slight cool tint */
-  --foreground: 222 47% 11%; /* Deep navy text */
+  /* Backgrounds: Dark Theme */
+  --background: 220 7% 12%;
+  --foreground: 0 0% 100%;
   
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted: 220 10% 20%;
+  --muted-foreground: 220 10% 70%;
   
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  --accent: 220 10% 18%;
+  --accent-foreground: 0 0% 100%;
   
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
 
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 221.2 83.2% 53.3%;
+  --card: 220 10% 15%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 220 10% 15%;
+  --popover-foreground: 0 0% 100%;
+
+  --border: 220 10% 25%;
+  --input: 220 10% 25%;
+  --ring: 51 100% 50%;
   
-  --radius: 0.75rem;
+  --radius: 0.625rem;
+
+  --sidebar-background: 220 10% 10%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 51 100% 50%;
+  --sidebar-primary-foreground: 220 10% 12%;
+  --sidebar-accent: 220 10% 18%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 220 10% 20%;
+  --sidebar-ring: 51 100% 50%;
+}
+
+.dark {
+  --background: 220 7% 12%;
+  --foreground: 0 0% 100%;
 }
 
 @layer base {
@@ -55,19 +75,38 @@
   }
   
   .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl shadow-black/5;
+    @apply bg-card/80 backdrop-blur-md border border-border shadow-xl shadow-black/20;
   }
 
   .premium-gradient {
-    @apply bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600;
+    @apply bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-500;
   }
   
   .subtle-gradient {
-    @apply bg-gradient-to-br from-slate-50 to-slate-100;
+    @apply bg-gradient-to-br from-[#1D1E20] to-[#2a2b2e];
+  }
+
+  .rocket-glow {
+    box-shadow: 0 0 40px rgba(255, 223, 0, 0.15);
+  }
+
+  .hover-elevate {
+    @apply transition-all duration-200;
+  }
+
+  .hover-elevate:hover {
+    @apply brightness-110;
+  }
+
+  .active-elevate-2 {
+    @apply transition-all duration-100;
+  }
+
+  .active-elevate-2:active {
+    @apply brightness-90;
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -78,5 +117,5 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+  @apply bg-muted rounded-full hover:bg-muted-foreground/30 transition-colors;
 }

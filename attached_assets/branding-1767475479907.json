@@ -1,0 +1,102 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "sans-serif",
+      "count": 29
+    },
+    {
+      "family": "Poppins",
+      "count": 25
+    },
+    {
+      "family": "DM Sans",
+      "count": 3
+    },
+    {
+      "family": "Arial",
+      "count": 3
+    },
+    {
+      "family": "Helvetica",
+      "count": 1
+    }
+  ],
+  "colors": {
+    "primary": "#FFDF00",
+    "accent": "#727586",
+    "background": "#1D1E20",
+    "textPrimary": "#1D1E20",
+    "link": "#727586"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "DM Sans",
+      "heading": "Poppins"
+    },
+    "fontStacks": {
+      "body": [
+        "DM Sans",
+        "sans-serif"
+      ],
+      "heading": [
+        "Poppins",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Poppins",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "64px",
+      "h2": "64px",
+      "body": "32px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "5px"
+  },
+  "components": {
+    "input": {
+      "background": "#FFFFFF",
+      "textColor": "#0D141A",
+      "borderColor": "#B8C0CC",
+      "borderRadius": "10px",
+      "borderRadiusCorners": {
+        "topLeft": "10px",
+        "topRight": "10px",
+        "bottomRight": "10px",
+        "bottomLeft": "10px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": null,
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": "File saved at: attached_assets/ogImage.jpg"
+  },
+  "__framework_hints": [
+    "Hostinger Website Builder"
+  ],
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "secondary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "confidence": 0
+  },
+  "confidence": {
+    "buttons": 0,
+    "colors": 0,
+    "overall": 0
+  }
+}

@@ -253,7 +253,7 @@ export default function HomePage() {
         </div>
       </section>
       <footer className="border-t border-border py-8 text-center text-muted-foreground text-sm">
-        <p>© 2026 🚀 Click Rocket Lab. All rights reserved.</p>
+        <p>© 2026 <a href="https://clickrocketlab.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Click Rocket Lab</a>. All rights reserved.</p>
       </footer>
     </div>
   );

@@ -85,7 +85,6 @@ export default function HomePage() {
           </div>
         </div>
       </nav>
-
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="text-center space-y-6 mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
@@ -215,7 +214,6 @@ export default function HomePage() {
           </div>
         )}
       </section>
-
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold text-center text-foreground mb-8">Results, Delivered Locally</h2>
         <div className="grid md:grid-cols-3 gap-6">
@@ -254,9 +252,8 @@ export default function HomePage() {
           </Card>
         </div>
       </section>
-
       <footer className="border-t border-border py-8 text-center text-muted-foreground text-sm">
-        <p>Click Rocket Lab - Clicks That Soar</p>
+        <p>Copyright 2026 - Click Rocket Lab</p>
       </footer>
     </div>
   );
